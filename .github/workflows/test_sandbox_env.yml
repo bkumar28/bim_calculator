@@ -6,7 +6,7 @@ on:
       environment:
         default: "Production"
       APPLICATION_LOG_LEVEL:
-        default: ${{ vars.SYSTEM_LOG_LEVEL }}"
+        default: ${{ vars.APPLICATION_LOG_LEVEL }}"
       SYSTEM_LOG_LEVEL:
         default: ${{ vars.SYSTEM_LOG_LEVEL }}"
   push:
