@@ -6,9 +6,9 @@ on:
       environment:
         default: "Sandbox"
       APPLICATION_LOG_LEVEL:
-        default: ${{ vars.APPLICATION_LOG_LEVEL }}"
+        default: ${{ env.APPLICATION_LOG_LEVEL }}"
       SYSTEM_LOG_LEVEL:
-        default: ${{ vars.SYSTEM_LOG_LEVEL }}"
+        default: ${{ env.SYSTEM_LOG_LEVEL }}"
   push:
     branches:
       - '*'  # This triggers the workflow on every branch
