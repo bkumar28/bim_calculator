@@ -13,8 +13,7 @@ jobs:
   test:
     name: Run Action To Validate Environment Variables
     runs-on: ubuntu-latest
-    environment:
-      name: ${{ inputs.environment }}
+    environment: ${{ inputs.environment }}
     steps:
       - name: Verifiy Environment Variable Value
         run: |
