@@ -6,8 +6,8 @@ on:
       - '*'  # This triggers the workflow on every branch
 
 env:
-  APPLICATION_LOG_LEVEL: ${{ vars.APPLICATION_LOG_LEVEL }}
-  SYSTEM_LOG_LEVEL: ${{ vars.SYSTEM_LOG_LEVEL }}
+  APPLICATION_LOG_LEVEL: ${{ env.APPLICATION_LOG_LEVEL }}
+  SYSTEM_LOG_LEVEL: ${{ env.SYSTEM_LOG_LEVEL }}
   
 jobs:
   test:
