@@ -4,7 +4,8 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        default: "Sandbox"
+        description: 'Environment'
+        default: Sandbox
         required: true
         type: string
   push:
@@ -15,10 +16,10 @@ jobs:
   test:
     name: Run Action To Validate Environment Variables
     runs-on: ubuntu-latest
-    environment: ${{ github.event.inputs.environment }}
+    environment: ${{ inputs.environment }}
     steps:
       - name: Verifiy Environment Variable Value
         run: |
-          echo "Environment: ${{ github.event.inputs.environment }}"
+          echo "Environment: ${{ inputs.environment }}"
           echo "Application Log Level: ${{ vars.APPLICATION_LOG_LEVEL }}"
           echo "System Log Level: ${{ vars.SYSTEM_LOG_LEVEL }}"
