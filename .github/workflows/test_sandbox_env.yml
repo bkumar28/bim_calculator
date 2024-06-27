@@ -16,5 +16,6 @@ jobs:
     steps:
       - name: Verifiy Environment Variable Value
         run: |
+          echo "Environment: ${{ inputs.environment }}"
           echo "Application Log Level: ${{ env.APPLICATION_LOG_LEVEL }}"
           echo "System Log Level: ${{ env.SYSTEM_LOG_LEVEL }}"
