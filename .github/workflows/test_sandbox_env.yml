@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        default: "Production"
+        default: "Sandbox"
       APPLICATION_LOG_LEVEL:
         default: ${{ vars.APPLICATION_LOG_LEVEL }}"
       SYSTEM_LOG_LEVEL:
@@ -17,7 +17,6 @@ jobs:
   test:
     name: Run Action To Validate Environment Variables
     runs-on: ubuntu-latest
-    environment: Sandbox
     steps:
       - name: Verifiy Environment Variable Value
         run: |
