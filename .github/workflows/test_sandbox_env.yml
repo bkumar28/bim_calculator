@@ -5,10 +5,6 @@ on:
     inputs:
       environment:
         default: "Sandbox"
-      APPLICATION_LOG_LEVEL:
-        default: "${{ env.APPLICATION_LOG_LEVEL }}"
-      SYSTEM_LOG_LEVEL:
-        default: "${{ env.SYSTEM_LOG_LEVEL }}"
   push:
     branches:
       - '*'  # This triggers the workflow on every branch
@@ -20,5 +16,5 @@ jobs:
     steps:
       - name: Verifiy Environment Variable Value
         run: |
-          echo "Application Log Level: ${{ inputs.APPLICATION_LOG_LEVEL }}"
-          echo "System Log Level: ${{ inputs.SYSTEM_LOG_LEVEL }}"
+          echo "Application Log Level: ${{ inputs.environment.vars.APPLICATION_LOG_LEVEL }}"
+          echo "System Log Level: ${{ inputs.environment.vars.SYSTEM_LOG_LEVEL }}"
