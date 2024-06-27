@@ -4,7 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        default: Sandbox
+        default: "Sandbox"
+        required: true
+        type: string
   push:
     branches:
       - '*'  # This triggers the workflow on every branch
