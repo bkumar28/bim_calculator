@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        default: "Sandbox"
+        default: Sandbox
   push:
     branches:
       - '*'  # This triggers the workflow on every branch
@@ -13,7 +13,7 @@ jobs:
   test:
     name: Run Action To Validate Environment Variables
     runs-on: ubuntu-latest
-    environment: ${{ inputs.environment }}
+    environment: "${{ inputs.environment }}"
     steps:
       - name: Verifiy Environment Variable Value
         run: |
