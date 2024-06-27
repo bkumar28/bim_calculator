@@ -1,6 +1,14 @@
 name: Github Sandbox Environment Variable Test Suite
 
 on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        default: "Production"
+      APPLICATION_LOG_LEVEL:
+        default: ${{ vars.SYSTEM_LOG_LEVEL }}"
+      SYSTEM_LOG_LEVEL:
+        default: ${{ vars.SYSTEM_LOG_LEVEL }}"
   push:
     branches:
       - '*'  # This triggers the workflow on every branch
@@ -13,5 +21,5 @@ jobs:
     steps:
       - name: Verifiy Environment Variable Value
         run: |
-          echo "Application Log Level: ${{ vars.APPLICATION_LOG_LEVEL }}"
-          echo "System Log Level: ${{ vars.SYSTEM_LOG_LEVEL }}"
+          echo "Application Log Level: ${{ inputs.APPLICATION_LOG_LEVEL }}"
+          echo "System Log Level: ${{ inputs.SYSTEM_LOG_LEVEL }}"
