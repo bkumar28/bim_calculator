@@ -9,7 +9,7 @@ jobs:
   test:
     name: Run Action To Validate Environment Variables
     runs-on: ubuntu-latest
-    environment: production
+    environment: Sandbox
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
