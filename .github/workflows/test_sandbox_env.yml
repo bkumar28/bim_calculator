@@ -21,7 +21,7 @@ jobs:
 
       - name: Verifiy Environment Variable Value
         run: |
-          echo "${{ vars.APPLICATION_LOG_LEVEL }}"
-          echo "${{ vars.SYSTEM_LOG_LEVEL }}"
+          echo "Application Log Level: ${{ vars.APPLICATION_LOG_LEVEL }}"
+          echo "System Log Level: ${{ vars.SYSTEM_LOG_LEVEL }}"
 
     
