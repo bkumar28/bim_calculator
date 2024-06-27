@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        default: "Production"
+        default: "Testing"
       APPLICATION_LOG_LEVEL:
         default: ${{ vars.APPLICATION_LOG_LEVEL }}"
       SYSTEM_LOG_LEVEL:
