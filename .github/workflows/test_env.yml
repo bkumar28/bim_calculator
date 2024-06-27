@@ -4,16 +4,12 @@ on:
   push:
     branches:
       - '*'  # This triggers the workflow on every branch
-
-env:
-  APPLICATION_LOG_LEVEL: ${{ env.APPLICATION_LOG_LEVEL }}
-  SYSTEM_LOG_LEVEL: ${{ env.SYSTEM_LOG_LEVEL }}
   
 jobs:
   test:
     name: Run Action To Validate Environment Variables
     runs-on: ubuntu-latest
-
+    environment: production
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -25,7 +21,7 @@ jobs:
 
       - name: Verifiy Environment Variable Value
         run: |
-          echo "${{ env.APPLICATION_LOG_LEVEL }}"
-          echo "${{ env.SYSTEM_LOG_LEVEL }}"
+          echo "${{ vars.APPLICATION_LOG_LEVEL }}"
+          echo "${{ vars.SYSTEM_LOG_LEVEL }}"
 
     
