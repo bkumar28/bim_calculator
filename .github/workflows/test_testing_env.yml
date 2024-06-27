@@ -5,10 +5,6 @@ on:
     inputs:
       environment:
         default: "Testing"
-      APPLICATION_LOG_LEVEL:
-        default: ${{ vars.APPLICATION_LOG_LEVEL }}"
-      SYSTEM_LOG_LEVEL:
-        default: ${{ vars.SYSTEM_LOG_LEVEL }}"
   push:
     branches:
       - '*'  # This triggers the workflow on every branch
