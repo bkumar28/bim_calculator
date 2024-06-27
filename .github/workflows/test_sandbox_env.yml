@@ -13,10 +13,10 @@ jobs:
   test:
     name: Run Action To Validate Environment Variables
     runs-on: ubuntu-latest
-    environment: Sandbox
+    environment: ${{ github.event.inputs.environment }}
     steps:
       - name: Verifiy Environment Variable Value
         run: |
-          echo "Environment: ${{ inputs.environment }}"
+          echo "Environment: ${{ github.event.inputs.environment }}"
           echo "Application Log Level: ${{ vars.APPLICATION_LOG_LEVEL }}"
           echo "System Log Level: ${{ vars.SYSTEM_LOG_LEVEL }}"
